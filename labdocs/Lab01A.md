@@ -20,10 +20,7 @@ If you are using an Azure Pass subscription, provided to you for this course, yo
 
 As its name suggests, a workspace is a centralized place to manage all of the Azure ML assets you need to work on a machine learning project.
 
-1. In the [Azure portal](https://portal.azure.com), create a new **Machine Learning** resource, specifying a unique workspace name and creating a new resource group in the region nearest your location. Select the **Enterprise** workspace edition.
-
-   > **Note**: Basic edition workspaces have lower cost, but don't include capabilities like Auto ML, the Visual Designer, and data drift monitoring. For more details, see [Azure Machine Learning pricing](https://azure.microsoft.com/en-us/pricing/details/machine-learning/).
-
+1. In the [Azure portal](https://portal.azure.com), create a new **Machine Learning** resource, specifying a unique workspace name and creating a new resource group in the region nearest your location.
 2. When the workspace and its associated resources have been created, view the workspace in the portal.
 
 ## Task 2: Explore the Azure ML Studio Interface
@@ -41,17 +38,19 @@ One of the benefits of Azure Machine Learning is the ability to create cloud-bas
 
 1. In the Azure Machine Learning studio web interface for your workspace, view the **Compute** page. This is where you'll manage all the compute targets for your data science activities.
 2. On the **Compute Instances** tab, add a new compute instance with the following settings. You'll use this as a workstation from which to test your model:
-    - **Compute name**: *enter a unique name*
     - **Virtual Machine type**: CPU
-    - **Virtual Machine size**: Standard_DS1_v2
+    - **Virtual Machine size**: Standard_DS11_v2
+    - **Compute name**: *enter a unique name*
+    - **Enable SSH access**: Unselected
 3. While the compute instance is being created, switch to the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Compute name**: *enter a unique name*
-    - **Virtual Machine type**: CPU
     - **Virtual Machine priority**: Dedicated
-    - **Virtual Machine size**: Standard_DS2_v2
+    - **Virtual Machine type**: CPU
+    - **Virtual Machine size**: Standard_DS11_v2
+    - **Compute name**: *enter a unique name*
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
+    - **Enable SSH access**: Unselected
 4. Note the **Inference Clusters** tab. This is where you can create and manage compute targets on which to deploy your trained models as web services for client applications to consume.
 5. Note the **Attached Compute** tab. This is where you could attach a virtual machine or Databricks cluster that exists outside of your workspace.
 
